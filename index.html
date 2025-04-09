@@ -1,0 +1,643 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahul Khatri's Resume</title>
+    <!-- Adding Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-light: #dbeafe;
+      --secondary-color: #4f46e5;
+      --text-dark: #1e293b;
+      --text-medium: #475569;
+      --text-light: #64748b;
+      --bg-color: #f8fafc;
+      --card-color: #ffffff;
+      --accent-color: #06b6d4;
+      --border-color: #e2e8f0;
+      --hover-color: #eff6ff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      max-width: 850px;
+      width: 100%;
+      background-color: var(--card-color);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    /* Navigation */
+    nav {
+      width: 100%;
+      max-width: 850px;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    
+    nav a {
+      color: var(--text-medium);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    
+    nav a:hover {
+      background-color: var(--hover-color);
+      color: var(--primary-color);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .profile {
+      flex-grow: 1;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      width: 30%;
+      height: 3px;
+      background-color: var(--primary-color);
+      bottom: 0;
+      left: 0;
+      border-radius: 2px;
+    }
+
+    .title {
+      font-size: 1.15em;
+      color: var(--text-medium);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .location {
+      font-size: 0.95em;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .location i {
+      margin-right: 6px;
+      color: var(--text-light);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .contact-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    
+    .contact-links a i {
+      margin-right: 6px;
+    }
+    
+    .contact-links a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    .contact-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    
+    .contact-links a:hover::after {
+      width: 100%;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .avatar:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 1.7em;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      background-color: var(--primary-color);
+      bottom: 0;
+      left: 0;
+      border-radius: 2px;
+    }
+
+    .about p {
+      color: var(--text-medium);
+      font-size: 1.05em;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .job {
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      transition: all 0.3s ease;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    
+    .job:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .job:last-child {
+      border-bottom: none;
+    }
+
+    .job h3 {
+      font-size: 1.3em;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+    }
+
+    .company {
+      font-size: 1.05em;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    
+    .company::before {
+      content: "•";
+      margin-right: 6px;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .duration {
+      font-size: 0.9em;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .job ul {
+      list-style: none;
+      padding-left: 5px;
+      color: var(--text-medium);
+      font-size: 1em;
+      margin-top: 12px;
+    }
+
+    .job li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .job li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+    
+    .job p {
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+
+    .education .institution {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .education .institution:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .education h3 {
+      font-size: 1.3em;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .degree {
+      font-size: 1.05em;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skills li {
+      background-color: var(--primary-light);
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.95em;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: 1px solid var(--primary-light);
+    }
+    
+    .skills li:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+    }
+
+    footer {
+      width: 100%;
+      max-width: 850px;
+      margin-top: 10px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9em;
+      padding: 20px 0;
+    }
+
+    .made-by a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .made-by a:hover {
+      color: var(--secondary-color);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .avatar {
+        margin-bottom: 20px;
+      }
+      
+      h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .skills ul {
+        justify-content: center;
+      }
+      
+      h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        margin: 0;
+        padding: 20px;
+        background-color: #fff;
+        color: #000;
+      }
+
+      .container {
+        box-shadow: none;
+        padding: 0;
+      }
+
+      nav {
+        display: none;
+      }
+
+      header {
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .title,
+      .location,
+      .contact-links {
+        font-size: 0.9em;
+      }
+
+      .contact-links {
+        display: none; /* Hide contact links in print */
+      }
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      .about p,
+      .job p,
+      .job ul,
+      .job li,
+      .education p {
+        font-size: 0.9em;
+        color: #000;
+      }
+
+      .skills ul {
+        gap: 8px;
+      }
+
+      .skills li {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        padding: 5px 10px;
+        font-size: 0.8em;
+        border: 1px solid #ddd;
+      }
+
+      footer {
+        margin-top: 10px;
+        font-size: 0.8em;
+      }
+      
+      .job:hover, .education .institution:hover {
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+      }
+    }
+  </style>
+  <body>
+    <!-- Simple navigation -->
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+    
+    <div class="container">
+      <header>
+        <div class="profile">
+          <h1>Rahul Khatri</h1>
+          <p class="title">
+            Entrepreneur, AI Innovator, and Social Media Strategist
+          </p>
+          <p class="location">
+            <i class="fas fa-map-marker-alt"></i> Vellore, India
+          </p>
+          <div class="contact-links">
+            <a
+              href="https://linkedin.com/in/rahulkhatri"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:contact@rahulkhatri.com">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+        <div class="avatar">
+          <span>RK</span>
+        </div>
+      </header>
+
+      <section id="about" class="about">
+        <h2>About</h2>
+        <p>
+          Rahul Khatri is a dynamic entrepreneur and AI innovator with a proven
+          track record of scaling startups and leading teams. He has
+          successfully built and grown multiple ventures, including a
+          distribution network for startups and an AI studio for fashion shoots.
+          With a strong background in marketing, social media management, and
+          product development, Rahul is driven by a passion for connecting the
+          dots and blending skillsets to build innovative solutions.
+        </p>
+      </section>
+
+      <section id="experience" class="experience">
+        <h2>Work Experience</h2>
+        <div class="job">
+          <h3>Co-founder</h3>
+          <p class="company">collegestuff · Vellore, India</p>
+          <p class="duration">Sep 2022 - Apr 2023</p>
+          <ul>
+            <li>
+              Scaled the startup from inception to a traction of 225,000+ users
+              organically within a 2.5-month operational timeframe.
+            </li>
+            <li>
+              Built a distribution network for 2 startups, increasing their
+              conversion rates and operational efficiency.
+            </li>
+            <li>Clocked a revenue of $6,500 in 3 months.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3>Founder</h3>
+          <p class="company">aurax · Vellore, India</p>
+          <p class="duration">Jun 2023 - Present</p>
+          <p>
+            Building AuraX, an AI studio for fashion shoots that eliminates the
+            need for models, photographers, and locations. Focused on developing
+            cutting-edge AI solutions to revolutionize the fashion industry.
+          </p>
+        </div>
+        <div class="job">
+          <h3>Social Media Strategist</h3>
+          <p class="company">vit vellore · Vellore, India (Part-time)</p>
+          <p class="duration">Aug 2022 - Present</p>
+          <p>
+            Built the largest college Instagram page of 2022 organically,
+            achieving 15M+ views with over 16% engagement rate. Partnered with
+            local and national brands to promote businesses.
+          </p>
+        </div>
+        <div class="job">
+          <h3>B2B Growth</h3>
+          <p class="company">campusexpress · Remote (Part-time)</p>
+          <p class="duration">Nov 2022 - Mar 2023</p>
+          <p>
+            Led the team to win 'Hack for India' organized by Indian Oil,
+            sponsored by GitHub, SyncLoop, and Quine. Won $1,250 among 4,000+
+            participants and 1,700+ teams.
+          </p>
+        </div>
+        <div class="job">
+          <h3>Research Intern</h3>
+          <p class="company">iit jodhpur · Jodhpur, India (Internship)</p>
+          <p class="duration">Jun 2024 - Aug 2024</p>
+          <p>
+            Worked on the latest techniques in 3D Computer Vision, contributing
+            to cutting-edge research and development.
+          </p>
+        </div>
+      </section>
+
+      <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="institution">
+          <h3>Vellore Institute of Technology</h3>
+          <p class="degree">
+            B.Tech Computer Science Engineering (Dropped out)
+          </p>
+          <p class="duration">2022 - 2024</p>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Entrepreneurship</li>
+          <li>AI Development</li>
+          <li>Marketing</li>
+          <li>Team Leadership</li>
+          <li>Product Development</li>
+          <li>Social Media Management</li>
+          <li>3D Computer Vision</li>
+          <li>Growth Hacking</li>
+          <li>Business Development</li>
+          <li>Project Management</li>
+        </ul>
+      </section>
+    </div>
+    
+    <footer>
+      <p class="made-by"><a href="/" target="_blank">Made by Self.so</a></p>
+    </footer>
+  </body>
+</html>
